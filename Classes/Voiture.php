@@ -66,11 +66,22 @@ public function getMessage_au_tableau_de_bord(){
 //Setters
 public function setAssure($a){
     $this->assure = $a;
+    if ($a) {
+        $this ->message = "Vous êtes assuré";
+       
+    } else {
+        $this ->message = "Attention vous n'êtes pas assurré !!!";
+    }
+    
 }
 
-public function setMessage_au_tableau_de_bord($m){
-    $this -> message_au_tableau_de_bord = $m;
-}
+// public function setMessage_au_tableau_de_bord($m){
+//     $this -> message_au_tableau_de_bord = $m;
+// }
+
+//Les méthodes
+//3. Methodes de service
+
 
 }
 
