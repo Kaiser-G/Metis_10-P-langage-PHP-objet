@@ -98,13 +98,54 @@ public function Repeindre($Repeindre)
 
 // 3.2 FAIRE L’APPOINT D’ESSENCE Mettre_essence()
 
+// public function Mettre_essence($Mettre_essence)
+// { 
+//     if ($Mettre_essence  > $this ->capacite_du_réservoir) {
+//         $this ->message_au_tableau_de_bord = "Vous versez à coter";
+//     } else {
+//         $this ->message_au_tableau_de_bord = "Carburant ok";
+//     }
+    
+// }
+
 public function Mettre_essence($Mettre_essence)
-{
-    if ($Mettre_essence  > $this ->capacite_du_réservoir) {
+{ 
+    // $this -> niveau_essence + $Mettre_essence < $this ->capacite_du_réservoir
+    
+    if ($this -> niveau_essence && $Mettre_essence > $this ->capacite_du_réservoir) {
         $this ->message_au_tableau_de_bord = "Vous versez à coter";
     } else {
-        $this ->message_au_tableau_de_bord = "Carburant ok";
+        $this -> niveau_essence += $Mettre_essence;
+        $this ->message_au_tableau_de_bord = "Carburant ok, votre jauge a carburant est de "  . $this->niveau_essence. " Litres" ;
     }
+    
+}
+
+//3.3 SE DEPLACER Se_deplacer()
+
+public function conso($Distance, $Vitesse)
+{
+    //distance en km et vitesse moyenne
+    //$this -> niveau_essence
+    //Consommation de 10 l aux 100 km en ville, soit à une vitesse moyenne inférieure à 50 km/h; 
+    $conso = 0;
+    if ($vitesse < 50) {
+        $conso = $uneDistance*0.1;
+    //Consommation de 5 l aux 100 km en sur route, soit à une vitesse moyenne comprise entre 50 et 90 km/h ; 
+    } elseif ($vitesse < 90) {
+        $conso = $uneDistance*0.5;
+    //Consommation de 8 l aux 100 km en sur autoroute, soit à une vitesse moyenne comprise entre 90 et 130 km/h ; 
+    } elseif ($vitesse < 130) {
+        $conso = $uneDistance*0.8;
+    //Consommation de 12 l aux 100 km pour une vitesse moyenne supérieure à 130 km/h;
+    } elseif ($vitesse < 90) {
+        $conso = $uneDistance*0.12;
+    } 
+    return $conso;
+}
+
+public function Se_deplacer($Distance, $Vitesse)
+{
     
 }
 

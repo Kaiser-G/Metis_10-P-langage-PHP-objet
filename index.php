@@ -29,9 +29,15 @@ var_dump($voiture2);
     //$voiture2 -> $Repeindre();
     //echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
 
+    // Méthode Mettre_essence
     //Mettre de l'essence
-    $niveau = $voiture2 -> Mettre_essence(10);
+    $niveau = $voiture2 -> Mettre_essence(20);
     echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
+
+
+
+
+    
     ?>
 </body>
 </html>
