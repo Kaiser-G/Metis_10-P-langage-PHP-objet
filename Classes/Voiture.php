@@ -67,10 +67,10 @@ public function getMessage_au_tableau_de_bord(){
 public function setAssure($a){
     $this->assure = $a;
     if ($a) {
-        $this ->message = "Vous êtes assuré";
+        $this ->message_au_tableau_de_bord = "Vous êtes assuré";
        
     } else {
-        $this ->message = "Attention vous n'êtes pas assurré !!!";
+        $this ->message_au_tableau_de_bord = "Attention vous n'êtes pas assurré !!!";
     }
     
 }
@@ -81,6 +81,32 @@ public function setAssure($a){
 
 //Les méthodes
 //3. Methodes de service
+//3.1 REPEINDRE LA VOITURE Repeindre()
+
+public function Repeindre($Repeindre)
+{
+    if ($Repeindre === $coul ) {
+        $message = "Merci pour ce rafraîchissement";
+    } else {
+        // $couleur = $Repeindre;
+        $this -> couleur = $Repeindre;
+        $message = "Merci pour la nouvelle couleur";
+    }
+    
+
+}
+
+// 3.2 FAIRE L’APPOINT D’ESSENCE Mettre_essence()
+
+public function Mettre_essence($Mettre_essence)
+{
+    if ($Mettre_essence  > $this ->capacite_du_réservoir) {
+        $this ->message_au_tableau_de_bord = "Vous versez à coter";
+    } else {
+        $this ->message_au_tableau_de_bord = "Carburant ok";
+    }
+    
+}
 
 
 }
