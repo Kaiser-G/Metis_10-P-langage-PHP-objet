@@ -67,10 +67,10 @@ public function getMessage_au_tableau_de_bord(){
 public function setAssure($a){
     $this->assure = $a;
     if ($a) {
-        $this ->message_au_tableau_de_bord = "Vous êtes assuré";
+        $this -> message_au_tableau_de_bord = "Vous êtes assuré";
        
     } else {
-        $this ->message_au_tableau_de_bord = "Attention vous n'êtes pas assurré !!!";
+        $this -> message_au_tableau_de_bord = "Attention vous n'êtes pas assurré !!!";
     }
     
 }
@@ -90,7 +90,7 @@ public function Repeindre($Repeindre)
     } else {
         // $couleur = $Repeindre;
         $this -> couleur = $Repeindre;
-        $this -> message_au_tableau_de_bord  = "Merci pour la nouvelle couleur";
+        $this -> message_au_tableau_de_bord  = "Merci pour la nouvelle couleur " . $this -> couleur ;
     }
     
 

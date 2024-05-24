@@ -9,7 +9,7 @@ $voiture1 -> setAssure(TRUE);
 var_dump($voiture1); 
 
 $voiture2 = new Voiture("BB", "Rouge", 1500, 800, 100, 5, TRUE, "");
-$voiture2 -> setAssure(FALSE);
+//$voiture2 -> setAssure(FALSE);
 var_dump($voiture2);
 
 $voiture2 -> Repeindre("Vert");
@@ -25,8 +25,13 @@ var_dump($voiture2);
 <body>
     <h1>Voitures</h1>
     <?php
+    //assurance
+    $voiture2 -> setAssure(false);
+    echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
+
+
     //echo "<p>Je repeind voiture 2</p>"
-    //$voiture2 -> $Repeindre();
+    $voiture2 -> Repeindre("jaune");
     echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
     //echo "La couleur de la voiture 2 est :".$voiture2->getCouleur();
 
