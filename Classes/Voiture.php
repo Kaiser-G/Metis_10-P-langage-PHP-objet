@@ -123,32 +123,49 @@ public function Mettre_essence($Mettre_essence)
 
 //3.3 SE DEPLACER Se_deplacer()
 
-public function conso($Distance, $Vitesse)
+public function conso($Distance, $vitesse)
 {
     //distance en km et vitesse moyenne
     //$this -> niveau_essence
     //Consommation de 10 l aux 100 km en ville, soit à une vitesse moyenne inférieure à 50 km/h; 
     $conso = 0;
     if ($vitesse < 50) {
-        $conso = $uneDistance*0.1;
+        $conso = $Distance*0.1;
     //Consommation de 5 l aux 100 km en sur route, soit à une vitesse moyenne comprise entre 50 et 90 km/h ; 
     } elseif ($vitesse < 90) {
-        $conso = $uneDistance*0.5;
+        $conso = $Distance*0.5;
     //Consommation de 8 l aux 100 km en sur autoroute, soit à une vitesse moyenne comprise entre 90 et 130 km/h ; 
     } elseif ($vitesse < 130) {
-        $conso = $uneDistance*0.8;
+        $conso = $Distance*0.8;
     //Consommation de 12 l aux 100 km pour une vitesse moyenne supérieure à 130 km/h;
     } elseif ($vitesse < 90) {
-        $conso = $uneDistance*0.12;
+        $conso = $Distance*0.12;
     } 
     return $conso;
 }
 
 public function Se_deplacer($Distance, $Vitesse)
 {
+    $conso = $this -> conso($Distance, $Vitesse);
+    //Test si carburant insuffisant
+    if ($conso > $this -> niveau_essence ) {
+        $this ->message_au_tableau_de_bord = $Distance . " Km : Pas asser de carburant pour se trajet";
+    } else {
+        $this -> niveau_essence -= $conso;
+        $this ->message_au_tableau_de_bord = $Distance ." Km : Tu as consommé " . $conso . " L."; 
+    }
+    
 
 }
 
+
+//3.4 METHODE __TOSTRING()
+
+public function __toString()
+    {
+        $msg = 'Véhicule immatriculer : %s ; couleur : %s ; puissance : %d Cv';
+        return sprintf($msg, $this->immatriculation, $this->couleur, $this->puissance);
+    }
 
 }
 

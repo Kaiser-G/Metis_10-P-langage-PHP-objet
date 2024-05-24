@@ -26,6 +26,7 @@ var_dump($voiture2);
     <h1>Voitures</h1>
     <?php
     //assurance
+    echo "Voiture assuré ?";
     $voiture2 -> setAssure(false);
     echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
 
@@ -37,12 +38,64 @@ var_dump($voiture2);
 
     // Méthode Mettre_essence
     //Mettre de l'essence
-    $niveau = $voiture2 -> Mettre_essence(20);
+    $niveau = $voiture2 -> Mettre_essence(80);
     echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
 
+    $voiture2 -> Se_deplacer(50, 90);
+    echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
+
+    // Méthode magique __toString()
+    echo $voiture2;
 
 
+    //Porshe de Fabrice
 
+    // J'achete une Porshe
+    $maPorshe = new Voiture("AA 123 AA", "Rouge", 850, 25, 70, 4);
+
+    // Je regarde le tableau de bord
+    //echo $maPorshe->getMessage(). "<br/>";
+
+    // Exploration Objet
+    var_dump($maPorshe);
+
+    // J'assure
+    $maPorshe->setAssure(true);
+    // Je regarde le tableau de bord
+    echo "<br/>" . $maPorshe->getMessage_au_tableau_de_bord(). "<br/>";
+
+    // Je passe à la pompe
+    $niveau = $maPorshe->Mettre_essence(50);
+    // Je regarde le tableau de bord
+    echo "<br/>" . $maPorshe->getMessage_au_tableau_de_bord(). "<br/>";
+
+    // J'ajoute de l'essence
+    $niveau = $maPorshe->Mettre_essence(20);
+    // Je regarde le tableau de bord
+    echo "<br/>" . $maPorshe->getMessage_au_tableau_de_bord(). "<br/>";
+
+    // Je roule 100Km à 90Km/h
+    $maPorshe->Se_deplacer(100,90);
+    // Je regarde le tableau de bord
+    echo "<br/>" . $maPorshe->getMessage_au_tableau_de_bord(). "<br/>";
+
+    // Je roule 1000Km à 200Km/h
+    $maPorshe->Se_deplacer(1000,200);
+    // Je regarde le tableau de bord
+    echo "<br/>" . $maPorshe->getMessage_au_tableau_de_bord(). "<br/>";
+
+    // Je repeins ma Porshe
+    
+    $maPorshe->Repeindre("bleu profond"); //   marche   ==> Message
+    echo "<br/>" . $maPorshe->getMessage_au_tableau_de_bord(). "<br/>";
+
+    $msg = "Niveau d'essence : ";
+    $msg .= $maPorshe->getNiveau_essence();
+    $msg .= " l.<br/>";
+    echo $msg;
+
+    // Méthode magique __toString()
+    echo $maPorshe;
 
     ?>
 </body>
