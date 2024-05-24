@@ -85,12 +85,12 @@ public function setAssure($a){
 
 public function Repeindre($Repeindre)
 {
-    if ($Repeindre === $coul ) {
-        $message = "Merci pour ce rafraîchissement";
+    if ($Repeindre === $this ->couleur ) {
+        $this -> message_au_tableau_de_bord  = "Merci pour ce rafraîchissement";
     } else {
         // $couleur = $Repeindre;
         $this -> couleur = $Repeindre;
-        $message = "Merci pour la nouvelle couleur";
+        $this -> message_au_tableau_de_bord  = "Merci pour la nouvelle couleur";
     }
     
 
@@ -146,7 +146,7 @@ public function conso($Distance, $Vitesse)
 
 public function Se_deplacer($Distance, $Vitesse)
 {
-    
+
 }
 
 

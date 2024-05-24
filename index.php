@@ -27,7 +27,8 @@ var_dump($voiture2);
     <?php
     //echo "<p>Je repeind voiture 2</p>"
     //$voiture2 -> $Repeindre();
-    //echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
+    echo "<p>". $voiture2 -> getMessage_au_tableau_de_bord()."</p>";
+    //echo "La couleur de la voiture 2 est :".$voiture2->getCouleur();
 
     // Méthode Mettre_essence
     //Mettre de l'essence
@@ -37,7 +38,7 @@ var_dump($voiture2);
 
 
 
-    
+
     ?>
 </body>
 </html>
