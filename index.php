@@ -96,7 +96,10 @@ var_dump($voiture2);
 
     // Méthode magique __toString()
     echo $maPorshe;
-
     ?>
+
+<!-- Test de clonage -->
+<p>J'ai cloner le dossier depuis mon git hub pro pour tester</p>
+
 </body>
 </html>
